@@ -28,7 +28,8 @@ public class Aplication {
         while(true){
             System.out.println("Bienvenido al cine " + cine1.getName());
             System.out.println("Ingrese 1 para ver pelicula y salas");
-            System.out.println("");
+            System.out.println("Ingrese 3 para ver pelicula y usuario");
+            System.out.println("Ingrese 4 para ver detalles pelicula y usuario");
             int option = sc.nextInt();
             if(option==1){
                 cine1.showItems();
@@ -39,6 +40,9 @@ public class Aplication {
                 System.out.println("Ingrese el titulo");
                 String titulo = sc.next();
                 cine1.registro(usuario, titulo);
+            }
+            if(option==4){
+                cine1.showItems();
             }
         }
 

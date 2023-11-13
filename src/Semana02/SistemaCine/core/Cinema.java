@@ -72,10 +72,15 @@ public class Cinema {
         }
         if(cinefound.isEstado()){
             userfound.addItem(cinefound);
-            cinefound.isEstado(false);
+            cinefound.setEstado(false);
             System.out.println("Registro correcto");
         }
+        else{
+            System.out.println("Error");
+        }
+
         
     }
+
 
 }
