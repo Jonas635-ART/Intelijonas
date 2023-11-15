@@ -8,13 +8,13 @@ import java.util.List;
 
 public class Cinema {
     private String name;
-    private List<CinemaItem> CinemaItem;
-    private List<Usuario> UserItem;
+    private List<CinemaItem> cinemaItems;
+    private List<Usuario> userLists;
 
     public Cinema(String name) {
         this.name = name;
-        this.CinemaItem = new ArrayList<>();
-        this.UserItem = new ArrayList<>();
+        this.cinemaItems = new ArrayList<>();
+        this.userLists = new ArrayList<>();
 
     }
 
@@ -26,53 +26,60 @@ public class Cinema {
         this.name = name;
     }
 
-    public List<Semana02.SistemaCine.modelos.CinemaItem> getCinemaItem() {
-        return CinemaItem;
+    public List<CinemaItem> getCinemaItems() {
+        return cinemaItems;
     }
 
-    public void setCinemaItem(List<Semana02.SistemaCine.modelos.CinemaItem> cinemaItem) {
-        CinemaItem = cinemaItem;
+    public void setCinemaItems(List<CinemaItem> cinemaItems) {
+        this.cinemaItems = cinemaItems;
     }
 
-    public List<Usuario> getUserItem() {
-        return UserItem;
+    public List<Usuario> getUserLists() {
+        return userLists;
     }
 
-    public void setUserItem(List<Usuario> userItem) {
-        UserItem = userItem;
+    public void setUserLists(List<Usuario> userLists) {
+        this.userLists = userLists;
     }
     public void showItems(){
-        for(CinemaItem cinema: this.CinemaItem){
+        for(CinemaItem cinema: this.cinemaItems){
+            cinema.showinfo();
+            System.out.println("-----------");
+        }
+    }
+    public void showItems2(){
+        for(CinemaItem cinema: this.cinemaItems){
             cinema.showinfo();
             System.out.println("-----------");
         }
     }
     public void registro(String name, String title){
-        Usuario userfound = null;
-        for(Usuario user: this.UserItem){
+        Usuario userFound = null;
+        for(Usuario user: this.userLists){
             if(user.getName().equals(name)){
-                userfound = user;
+                userFound = user;
                 break;
             }
         }
-        if(userfound == null){
+        if(userFound == null){
             System.out.println("Usuario no existe");
             return;
         }
-        CinemaItem cinefound = null;
-        for(CinemaItem item: this.CinemaItem){
-            if(item.getTitle().equals(title)){
-                cinefound = item;
+        CinemaItem cinemaFound = null;
+        for(CinemaItem cinema: this.cinemaItems){
+            if(cinema.getTitle().equals(title)){
+                cinemaFound = cinema;
                 break;
             }
         }
-        if(cinefound == null){
+        if(cinemaFound==null){
             System.out.println("Pelicula no existe");
+            return;
             
         }
-        if(cinefound.isEstado()){
-            userfound.addItem(cinefound);
-            cinefound.setEstado(false);
+        if(cinemaFound.isEstado()){
+            userFound.addItem(cinemaFound);
+            cinemaFound.setEstado(false);
             System.out.println("Registro correcto");
         }
         else{

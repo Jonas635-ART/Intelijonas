@@ -36,7 +36,7 @@ public class Usuario {
         CinemaItemList = cinemaItemList;
     }
 
-    public void addItem(CinemaItem item){
-        this.CinemaItemList.add(item);
+    public void addItem(CinemaItem cinema){
+        this.CinemaItemList.add(cinema);
     }
 }

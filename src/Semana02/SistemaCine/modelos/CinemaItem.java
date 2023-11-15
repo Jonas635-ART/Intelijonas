@@ -1,6 +1,6 @@
 package Semana02.SistemaCine.modelos;
 
-public abstract class CinemaItem {
+public class CinemaItem {
     protected String title;
     protected int ID;
     protected boolean estado;
@@ -37,9 +37,11 @@ public abstract class CinemaItem {
 
     public void showinfo(){
         System.out.println("title: " + this.title);
-        System.out.println("title: " + this.ID);
-        System.out.println("title: " + this.estado);
+        System.out.println("id: " + this.ID);
+        System.out.println("status: " + this.estado);
     }
 
-    public abstract void showItems();
+
+
+
 }

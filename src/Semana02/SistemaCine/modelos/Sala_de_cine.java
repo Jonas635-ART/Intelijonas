@@ -35,4 +35,15 @@ public class Sala_de_cine extends CinemaItem {
     public void setIs3D(boolean is3D) {
         this.is3D = is3D;
     }
+
+    @Override
+    public void showinfo() {
+        System.out.println("La sala tiene estos datos");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+    }
 }

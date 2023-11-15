@@ -12,15 +12,6 @@ public class Movie extends CinemaItem {
         this.age_Rating = age_Rating;
     }
 
-    public void showItems(){
-        System.out.println("Pelicula");
-        System.out.println("Nombre: " + title);
-        System.out.println("id: " + ID);
-        System.out.println("status: " + estado);
-        System.out.println("duracion: " + duration);
-        System.out.println("Rango_de_edad: " + age_Rating);
-        System.out.println("director: " + director);
-    }
 
     public String getDirector() {
         return director;
@@ -44,6 +35,16 @@ public class Movie extends CinemaItem {
 
     public void setAge_Rating(int age_Rating) {
         this.age_Rating = age_Rating;
+    }
+    @Override
+    public void showinfo(){
+        System.out.println("Pelicula");
+        System.out.println("Nombre: " + title);
+        System.out.println("id: " + ID);
+        System.out.println("status: " + estado);
+        System.out.println("duracion: " + duration);
+        System.out.println("Rango_de_edad: " + age_Rating);
+        System.out.println("director: " + director);
     }
 
 }
